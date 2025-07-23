@@ -1,40 +1,7 @@
 {
-  "version": 2,
   "functions": {
-    "api/validate-key.js": {
-      "runtime": "nodejs18.x"
-    },
-    "api/admin.js": {
-      "runtime": "nodejs18.x"
+    "api/*.js": {
+      "runtime": "@vercel/node@18"
     }
-  },
-  "routes": [
-    {
-      "src": "/api/validate-key",
-      "dest": "/api/validate-key.js"
-    },
-    {
-      "src": "/api/admin",
-      "dest": "/api/admin.js"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization"
-        }
-      ]
-    }
-  ]
+  }
 }
